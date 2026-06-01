@@ -1,0 +1,576 @@
+HTML
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cầm Đồ Hoàng Thắng - Uy Tín, Chuyên Nghiệp Tại Vĩnh Long</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary-color: #1a252f;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+            nav ul li {
+                margin-left: 25px;
+            }
+
+                nav ul li a {
+                    font-weight: 600;
+                    transition: color 0.3s;
+                    text-decoration: none;
+                }
+
+                    nav ul li a:hover {
+                        color: var(--primary-color);
+                    }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+            .btn-primary:hover {
+                background-color: var(--primary-dark);
+                transform: translateY(-2px);
+            }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+            .btn-secondary:hover {
+                background-color: var(--white);
+                color: var(--text-color);
+                transform: translateY(-2px);
+            }
+
+        /* Section Global */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+            .section-title h2 {
+                font-size: 32px;
+                text-transform: uppercase;
+                color: var(--secondary-color);
+                position: relative;
+                padding-bottom: 15px;
+                display: inline-block;
+            }
+
+                .section-title h2::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 4px;
+                    background-color: var(--primary-color);
+                }
+
+        /* Giới thiệu */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .about-features {
+            list-style: none;
+        }
+
+            .about-features li {
+                margin-bottom: 12px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+            }
+
+                .about-features li::before {
+                    content: '✓';
+                    color: var(--primary-color);
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+
+        .about-img {
+            background-color: #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .about-img-box {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+            .about-img-box h3 {
+                color: var(--primary-color);
+                margin-bottom: 10px;
+                font-size: 22px;
+            }
+
+        /* Dịch vụ */
+        .services {
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+                border-color: var(--primary-color);
+            }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+        }
+
+        /* Cam kết / Kho bãi */
+        .warehouse {
+            background: linear-gradient(rgba(26, 37, 47, 0.9), rgba(26, 37, 47, 0.9)), url('https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            color: var(--white);
+        }
+
+            .warehouse .section-title h2 {
+                color: var(--white);
+            }
+
+        .warehouse-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+            .warehouse-content p {
+                font-size: 18px;
+                margin-bottom: 40px;
+            }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        /* Liên hệ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px; /* Tăng khoảng cách một chút nhìn cho thoáng đạt */
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+
+        .info-text h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .info-text p {
+            color: #666;
+        }
+
+        /* Khung chứa bản đồ thật */
+        .map-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Hoàng Thắng</div>
+            <nav>
+                <ul>
+                    <li><a href="#gioi-thieu">Giới Thiệu</a></li>
+                    <li><a href="#dich-vu">Dịch Vụ</a></li>
+                    <li><a href="#kho-bai">Kho Bãi</a></li>
+                    <li><a href="#lien-he">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="trang-chu">
+        <div class="container hero-content">
+            <h1>Cầm Đồ Hoàng Thắng</h1>
+            <p>Giải pháp tài chính nhanh chóng, uy tín và chuyên nghiệp hàng đầu tại Vĩnh Long. Định giá tài sản cao, thủ tục đơn giản, bảo mật thông tin tuyệt đối.</p>
+            <div class="cta-buttons">
+                <a href="tel:0919640335" class="btn btn-primary">Gọi Hotline 1</a>
+                <a href="tel:0944799639" class="btn btn-secondary">Gọi Hotline 2</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="gioi-thieu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Giới Thiệu</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p><strong>Cầm Đồ Hoàng Thắng</strong> là đơn vị có many năm kinh nghiệm trong lĩnh vực hỗ trợ tài chính và cầm cố tài sản tại tỉnh Vĩnh Long. Chúng tôi hiểu rằng quý khách cần một giải pháp nhanh gọn, minh bạch khi gặp khó khăn về tài chính, vì vậy chúng tôi tối ưu hóa mọi quy trình để giải ngân trong thời gian ngắn nhất.</p>
+                    <p>Với phương châm "Uy tín tạo nên thương hiệu", Hoàng Thắng cam kết mang lại sự hài lòng tuyệt đối cho quý khách hàng từ khâu tiếp nhận, thẩm định cho đến khâu bảo quản tài sản.</p>
+                    <ul class="about-features">
+                        <li>Thủ tục nhanh chóng, giải ngân ngay bằng tiền mặt hoặc chuyển khoản</li>
+                        <li>Lãi suất cạnh tranh, minh bạch, không chi phí ẩn</li>
+                        <li>Hợp đồng cầm cố rõ ràng, đúng quy định pháp luật</li>
+                    </ul>
+                </div>
+                <div class="about-img">
+                    <div class="about-img-box">
+                        <h3>Hệ Thống Lưu Trữ An Toàn</h3>
+                        <p>Toàn bộ ô tô và xe máy của quý khách được lưu trữ tại hệ thống kho bãi mái che kiên cố, nền gạch sạch sẽ, có bảo vệ và camera giám sát 24/7. Cam kết không sử dụng tài sản của khách hàng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dịch vụ -->
+    <section class="services" id="dich-vu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dịch Vụ Chính</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Dịch vụ 1 -->
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Cầm Xe Ô Tô</h3>
+                    <p>Nhận cầm cố các loại xe ô tô: xe du lịch, xe tải, xe bán tải... Định giá lên đến 80-90% giá trị xe hiện tại. Hỗ trợ xe biển số tỉnh, xe đang trả góp ngân hàng (thủ tục hợp lệ).</p>
+                </div>
+                <!-- Dịch vụ 2 -->
+                <div class="service-card">
+                    <div class="service-icon">🏍️</div>
+                    <h3>Cầm Xe Gắn Máy</h3>
+                    <p>Nhận cầm tất cả các dòng xe máy: xe số, xe tay ga, xe phân khối lớn của các hãng Honda, Yamaha, Suzuki... Thủ tục nhanh gọn trong 5 phút, nhận tiền ngay.</p>
+                </div>
+                <!-- Dịch vụ 3 -->
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Thu Mua Xe Cũ</h3>
+                    <p>Chuyên thu mua lại các dòng xe ô tô và xe máy đã qua sử dụng với giá tốt nhất thị trường. Thủ tục mua bán, sang tên nhanh chóng, tiền mặt liền tay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kho bãi -->
+    <section class="warehouse" id="kho-bai">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cam Kết Bảo Quản Tài Sản</h2>
+            </div>
+            <div class="warehouse-content">
+                <p>Khác biệt lớn nhất của Cầm Đồ Hoàng Thắng chính là hệ thống kho bãi lưu trữ tài sản cực kỳ rộng rãi và kiên cố. Tài sản của quý khách (ô tô, xe máy) được xếp dỡ gọn gàng, bảo vệ nghiêm ngặt khỏi mưa nắng và các tác động thời tiết, đảm bảo khi bàn giao lại sẽ nguyên vẹn như lúc ban đầu.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Có Mái Che Kiên Cố</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>An Ninh Giám Sát</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0%</h3>
+                        <p>Không Hao Hụt Tài Sản</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="lien-he">
+        <div class="container">
+            <div class="section-title">
+                <h2>Thông Tin Liên Hệ</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <!-- Địa chỉ -->
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h3>Địa Chỉ Cửa Hàng</h3>
+                            <p>239/3, KP. Thạnh Hựu, P. Sơn Đông, TP. Vĩnh Long, Tỉnh Vĩnh Long</p>
+                        </div>
+                    </div>
+                    <!-- Hotline -->
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h3>Hotline Tư Vấn</h3>
+                            <p><strong>0919 640 335</strong></p>
+                            <p><strong>0944 799 639</strong></p>
+                        </div>
+                    </div>
+                    <!-- Giờ làm việc -->
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <h3>Giờ Làm Việc</h3>
+                            <p>Mở cửa tất cả các ngày trong tuần (Kể cả ngày lễ và Chủ Nhật)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Bản Đồ Thật và Nút Nhấp Dẫn Đường -->
+                <div class="map-wrapper">
+                    <!-- Bản đồ nhúng trực tiếp tương tác được -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.262529505432!2d106.352256!3d10.2852574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aa97520b3b24b%3A0xe14701b807215c34!2zROG7i2NoIHbhu6UgY-G6p20gxJHhu5MgSG_DoG5nIFRo4bqvbmc!5e0!3m2!1svi!2svn!4v1717244000000!5m2!1svi!2svn"
+                            width="100%"
+                            height="320"
+                            style="border:0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <!-- Nút bấm mở ứng dụng Google Maps đi thẳng tới vị trí cửa hàng -->
+                    <a href="https://www.google.com/maps/place/D%E1%BB%8Bch+v%E1%BB%A5+c%E1%BA%A7m+%C4%91%E1%BB%93+Ho%C3%A0ng+Th%E1%BA%AFng/@10.2852574,106.352256,17z/data=!3m1!4b1!4m6!3m5!1s0x310aa97520b3b24b:0xe14701b807215c34!8m2!3d10.2852521!4d106.3548309"
+                       target="_blank"
+                       style="display: block; text-align: center; background-color: #d32f2f; color: white; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: background 0.3s;"
+                       onmouseover="this.style.backgroundColor='#b71c1c'"
+                       onmouseout="this.style.backgroundColor='#d32f2f'">
+                        🗺️ Bấm vào đây để mở Google Maps định vị cửa hàng
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Cầm Đồ Hoàng Thắng. Tất cả quyền được bảo lưu.</p>
+            <p>Chuyên Cầm Ô Tô - Xe Máy & Thu Mua Xe Cũ Giá Cao Tại Vĩnh Long.</p>
+        </div>
+    </footer>
+
+    <!-- Nút Gọi Nhanh Dưới Góc Màn Hình -->
+    <div class="floating-contact">
+        <a href="tel:0919640335" class="float-btn float-phone" title="Gọi Ngay">
+            <span style="font-size: 11px;">GỌI NGAY</span>
+        </a>
+    </div>
+
+</body>
+</html>
